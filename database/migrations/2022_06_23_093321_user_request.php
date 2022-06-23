@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('user_requests', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->uuid('user_id');
             $table->string('url')->nullable();
             $table->timestamps();
+
             $table->index('user_id');
         });
     }
