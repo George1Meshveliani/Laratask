@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('user_tokens', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('api_token', 80)->unique()
+            $table->string('api_token', 100)->unique()
                 ->nullable()
                 ->default(null);
             $table->index('user_id');
