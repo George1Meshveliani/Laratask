@@ -19,4 +19,16 @@ class UserController extends Controller
             'data' => $users,
         ]);
     }
+
+    /**
+     * @param $token
+     * @return mixed
+     */
+    public function userDetail($token) {
+        $user = [];
+        if($token != '') {
+            $user = User::where('api_token', $token)->first();
+            return $user;
+        }
+    }
 }

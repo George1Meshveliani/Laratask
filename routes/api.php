@@ -22,3 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Endpoint: http://{url}/api/users
 // In our example http://localhost:8000/api/users
 Route::get('users', [UserController::class, 'allUsers']);
+
+
+// Endpoint: http://{url}/api/users/token
+// In our example http://localhost:8000/api/users/token
+Route::get('users/{token}', [UserController::class, 'userDetail']);
